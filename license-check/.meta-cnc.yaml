@@ -27,7 +27,7 @@ labels:
 # type_hint defines the form field used by panhandler
 # type_hints can be text, ip_address, or dropdown
 variables:
-  - name: api_key
+  - name: licensing_key
     description: Licensing API Key
     default:  0000-0000-0000-0000-0000
     type_hint: text
@@ -48,7 +48,7 @@ snippets:
     operation: post
     payload: payload.j2
     headers:
-      apiKey: '{{ api_key }}'
+      apiKey: '{{ licensing_key }}'
       Content-Type: application/x-www-form-urlencoded
 # ---------------------------------------------------------------------
 # end of snippets section
