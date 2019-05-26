@@ -1,0 +1,54 @@
+# skillet preamble information used by panhandler
+# ---------------------------------------------------------------------
+# unique snippet name
+name: ezhi-get-api-key
+# label used for menu selection
+label: ezhi-get-api-key
+description: ezhi-get-system-api-key
+
+# type of device configuration
+# common types are panorama, panos, and template
+# https://github.com/PaloAltoNetworks/panhandler/blob/develop/docs/metadata_configuration.rst
+type: rest
+# preload static or default-based templates
+extends:
+
+# grouping of like snippets for dynamic menu creation in panhandler
+labels:
+  collection:
+    - ezhi-activate-license
+
+# ---------------------------------------------------------------------
+# end of preamble section
+
+# variables section
+# ---------------------------------------------------------------------
+# variables used in the configuration templates
+# type_hint defines the form field used by panhandler
+# type_hints can be text, ip_address, or dropdown
+variables:
+  - name: host_ip
+    description: Firewall host ip address
+    default: 192.168.55.10
+    type_hint: text
+  - name: username
+    description: firewall username
+    default: admin
+    type_hint: text
+  - name: password
+    description: firewall password
+    default: password
+    type_hint: text
+# ---------------------------------------------------------------------
+# end of variables section
+
+# snippets section
+# ---------------------------------------------------------------------
+# snippets used for api configuration including xpath and element as file name
+# files will load in the order listed
+snippets:
+  - name: track
+    path: https://{{ host_ip }}/api/?type=keygen&user={{ username }}&password={{ password }}
+    operation: get
+# ---------------------------------------------------------------------
+# end of snippets section
