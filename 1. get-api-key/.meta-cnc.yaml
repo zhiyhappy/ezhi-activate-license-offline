@@ -1,9 +1,9 @@
 # skillet preamble information used by panhandler
 # ---------------------------------------------------------------------
 # unique snippet name
-name: ezhi-get-api-key
+name: Step1-get-api-key
 # label used for menu selection
-label: ezhi-get-api-key
+label: Step1-get-api-key
 description: ezhi-get-system-api-key
 
 # type of device configuration

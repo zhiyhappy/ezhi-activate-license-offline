@@ -1,9 +1,9 @@
 # skillet preamble information used by panhandler
 # ---------------------------------------------------------------------
 # unique snippet name
-name: ezhi-get-system-info
+name: Step2-get-system-info
 # label used for menu selection
-label: ezhi-get-system-info
+label: Step2-get-system-info
 description: ezhi-get-system-CPUID&UUID
 
 # type of device configuration
