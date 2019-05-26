@@ -1,0 +1,62 @@
+# skillet preamble information used by panhandler
+# ---------------------------------------------------------------------
+# unique snippet name
+name: ezhi-license-activate
+# label used for menu selection
+label: ezhi-license-activate
+description: ezhi-license-activate
+
+# type of device configuration
+# common types are panorama, panos, and template
+# https://github.com/PaloAltoNetworks/panhandler/blob/develop/docs/metadata_configuration.rst
+type: rest
+# preload static or default-based templates
+extends:
+
+# grouping of like snippets for dynamic menu creation in panhandler
+labels:
+  collection:
+    - ezhi-activate-license
+
+# ---------------------------------------------------------------------
+# end of preamble section
+
+# variables section
+# ---------------------------------------------------------------------
+# variables used in the configuration templates
+# type_hint defines the form field used by panhandler
+# type_hints can be text, ip_address, or dropdown
+variables:
+  - name: api_key
+    description: Licensing API Key
+    default:  0000-0000-0000-0000-0000
+    type_hint: text
+  - name: cpuid
+    description: cpuid
+    default: 
+    type_hint: text
+  - name: uuid
+    description: uuid
+    default: 
+    type_hint: text
+  - name: authcode
+    description: Auth Code to Check
+    default: ABC123
+    type_hint: text
+# ---------------------------------------------------------------------
+# end of variables section
+
+# snippets section
+# ---------------------------------------------------------------------
+# snippets used for api configuration including xpath and element as file name
+# files will load in the order listed
+snippets:
+  - name: track
+    path: https://api.paloaltonetworks.com/api/license/activate
+    operation: post
+    payload: payload.j2
+    headers:
+      apiKey: '{{ api_key }}'
+      Content-Type: application/x-www-form-urlencoded
+# ---------------------------------------------------------------------
+# end of snippets section
