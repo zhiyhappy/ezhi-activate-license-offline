@@ -54,8 +54,6 @@ snippets:
   - name: track
     path: https://api.paloaltonetworks.com/api/license/activate
     operation: post
-    payload: cpuid.j2
-    payload: uuid.j2
     payload: payload.j2
     headers:
       apiKey: '{{ api_key }}'
