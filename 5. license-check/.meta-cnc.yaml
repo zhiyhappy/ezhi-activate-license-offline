@@ -1,10 +1,10 @@
 # skillet preamble information used by panhandler
 # ---------------------------------------------------------------------
 # unique snippet name
-name: Step5-license-check
+name: Step5-licensing-server-check
 # label used for menu selection
-label: Step5-license-check
-description: ezhi-license-check
+label: Step5-licensing-server-check
+description: ezhi-licensing-server-check
 
 # type of device configuration
 # common types are panorama, panos, and template
