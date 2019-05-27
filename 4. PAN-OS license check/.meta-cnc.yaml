@@ -1,10 +1,10 @@
 # skillet preamble information used by panhandler
 # ---------------------------------------------------------------------
 # unique snippet name
-name: Step4-license-check
+name: Step4-get-license-info
 # label used for menu selection
-label: Step4-license-check
-description: ezhi-license-check
+label: Step4-get-license-info
+description: ezhi-get-system-license-info
 
 # type of device configuration
 # common types are panorama, panos, and template
@@ -16,7 +16,7 @@ extends:
 # grouping of like snippets for dynamic menu creation in panhandler
 labels:
   collection:
-    - ezhi-activate-license
+    - ezhi-deactive-license
 
 # ---------------------------------------------------------------------
 # end of preamble section
@@ -27,13 +27,13 @@ labels:
 # type_hint defines the form field used by panhandler
 # type_hints can be text, ip_address, or dropdown
 variables:
-  - name: licensing_key
-    description: Licensing API Key
-    default:  0000-0000-0000-0000-0000
+  - name: host_ip
+    description: Firewall host ip address
+    default: 192.168.55.10
     type_hint: text
-  - name: authcode
-    description: Auth Code to Check
-    default: ABC123
+  - name: api_key
+    description: firewall api_key
+    default: 0000-0000-0000-0000-0000
     type_hint: text
 # ---------------------------------------------------------------------
 # end of variables section
@@ -44,11 +44,7 @@ variables:
 # files will load in the order listed
 snippets:
   - name: track
-    path: https://api.paloaltonetworks.com/api/license/get
-    operation: post
-    payload: payload.j2
-    headers:
-      apiKey: '{{ licensing_key }}'
-      Content-Type: application/x-www-form-urlencoded
+    path: https://{{ host_ip }}/api/?type=op&cmd=<request><license><info/></license></request>&key={{ api_key }}
+    operation: get
 # ---------------------------------------------------------------------
 # end of snippets section
