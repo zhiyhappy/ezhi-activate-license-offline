@@ -46,5 +46,11 @@ snippets:
   - name: track
     path: https://{{ host_ip }}/api/?type=op&cmd=<show><system><info></info></system></show>&key={{ api_key }}
     operation: get
+    output_type: xml
+    outputs:
+      - name: vm-uuid
+        capture_pattern: result/system/vm-uuid
+      - name: vm-cpuid
+        capture_pattern: result/system/vm-cpuid
 # ---------------------------------------------------------------------
 # end of snippets section
