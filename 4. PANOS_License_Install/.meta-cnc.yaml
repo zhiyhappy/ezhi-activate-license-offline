@@ -1,0 +1,54 @@
+# skillet preamble information used by panhandler
+# ---------------------------------------------------------------------
+# unique snippet name
+name: Step4-install-license-key
+# label used for menu selection
+label: Step4-install-license-key
+description: install-license-key-to-panos
+
+# type of device configuration
+# common types are panorama, panos, and template
+# https://github.com/PaloAltoNetworks/panhandler/blob/develop/docs/metadata_configuration.rst
+type: rest
+# preload static or default-based templates
+extends:
+
+# grouping of like snippets for dynamic menu creation in panhandler
+labels:
+  collection:
+    - ezhi-activate-license-offline
+
+# ---------------------------------------------------------------------
+# end of preamble section
+
+# variables section
+# ---------------------------------------------------------------------
+# variables used in the configuration templates
+# type_hint defines the form field used by panhandler
+# type_hints can be text, ip_address, or dropdown
+variables:
+  - name: host_ip
+    description: Firewall host ip address
+    default: 192.168.55.10
+    type_hint: text
+  - name: api_key
+    description: firewall api_key
+    default: 0000-0000-0000-0000-0000
+    type_hint: text
+  - name: license_key
+    description: firewall license_key
+    default: 
+    type_hint: text
+# ---------------------------------------------------------------------
+# end of variables section
+
+# snippets section
+# ---------------------------------------------------------------------
+# snippets used for api configuration including xpath and element as file name
+# files will load in the order listed
+snippets:
+  - name: install_license_key_info_panos
+    path: https://{{ host_ip }}/api/?type=op&cmd=<request><license><install>{{ license_key }}</install></license></request>&key={{ api_key }}
+    operation: get
+# ---------------------------------------------------------------------
+# end of snippets section

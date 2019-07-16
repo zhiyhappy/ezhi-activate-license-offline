@@ -3,8 +3,8 @@
 # unique snippet name
 name: Step5-licensing-server-check
 # label used for menu selection
-label: Step5-licensing-server-check
-description: ezhi-licensing-server-check
+label: Step5-authcode-usage-check
+description: authcode-usage-check
 
 # type of device configuration
 # common types are panorama, panos, and template
@@ -16,7 +16,7 @@ extends:
 # grouping of like snippets for dynamic menu creation in panhandler
 labels:
   collection:
-    - ezhi-activate-license
+    - ezhi-activate-license-offline
 
 # ---------------------------------------------------------------------
 # end of preamble section
@@ -43,7 +43,7 @@ variables:
 # snippets used for api configuration including xpath and element as file name
 # files will load in the order listed
 snippets:
-  - name: track
+  - name: track_authcode_usage_on_licensing_server
     path: https://api.paloaltonetworks.com/api/license/get
     operation: post
     payload: payload.j2
