@@ -48,6 +48,12 @@ snippets:
     operation: get
     output_type: xml
     outputs:
+      - name: hostname
+        capture_pattern: result/system/hostname
+      - name: uptime
+        capture_pattern: result/system/uptime
+      - name: sw_version
+        capture_pattern: result/system/sw-version
       - name: vm-uuid
         capture_pattern: result/system/vm-uuid
       - name: vm-cpuid
