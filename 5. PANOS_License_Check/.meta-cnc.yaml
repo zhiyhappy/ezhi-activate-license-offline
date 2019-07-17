@@ -1,9 +1,9 @@
 # skillet preamble information used by panhandler
 # ---------------------------------------------------------------------
 # unique snippet name
-name: Step4-PANOS-license-info
+name: Step5-PANOS-license-info
 # label used for menu selection
-label: Step4-PANOS-license-info
+label: Step5-PANOS-license-info
 description: get-PANOS-license-info
 
 # type of device configuration

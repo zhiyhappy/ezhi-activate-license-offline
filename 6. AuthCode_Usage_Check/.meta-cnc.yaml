@@ -1,9 +1,9 @@
 # skillet preamble information used by panhandler
 # ---------------------------------------------------------------------
 # unique snippet name
-name: Step5-licensing-server-check
+name: Step6-licensing-server-check
 # label used for menu selection
-label: Step5-authcode-usage-check
+label: Step6-authcode-usage-check
 description: authcode-usage-check
 
 # type of device configuration
