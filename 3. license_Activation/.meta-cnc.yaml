@@ -4,7 +4,7 @@
 name: Step3-license-activate
 # label used for menu selection
 label: Step3-license-activate
-description: ezhi-license-activate
+description: license-activate
 
 # type of device configuration
 # common types are panorama, panos, and template
@@ -16,7 +16,7 @@ extends:
 # grouping of like snippets for dynamic menu creation in panhandler
 labels:
   collection:
-    - ezhi-activate-license
+    - ezhi-activate-license-offline
 
 # ---------------------------------------------------------------------
 # end of preamble section

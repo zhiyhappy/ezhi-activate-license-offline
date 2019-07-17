@@ -4,7 +4,7 @@
 name: Step2-get-system-info
 # label used for menu selection
 label: Step2-get-system-info
-description: ezhi-get-system-CPUID&UUID
+description: get-system-CPUID&UUID
 
 # type of device configuration
 # common types are panorama, panos, and template
@@ -16,7 +16,7 @@ extends:
 # grouping of like snippets for dynamic menu creation in panhandler
 labels:
   collection:
-    - ezhi-activate-license
+    - ezhi-activate-license-offline
 
 # ---------------------------------------------------------------------
 # end of preamble section

@@ -4,7 +4,7 @@
 name: Step4-PANOS-license-info
 # label used for menu selection
 label: Step4-PANOS-license-info
-description: ezhi-get-PANOS-license-info
+description: get-PANOS-license-info
 
 # type of device configuration
 # common types are panorama, panos, and template
@@ -16,7 +16,7 @@ extends:
 # grouping of like snippets for dynamic menu creation in panhandler
 labels:
   collection:
-    - ezhi-activate-license
+    - ezhi-activate-license-offline
 
 # ---------------------------------------------------------------------
 # end of preamble section
