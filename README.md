@@ -1,2 +1,1 @@
-# get-system-info
-get PANOS CPUID &amp; UUID
+Activate-PANOS-License-Offline
