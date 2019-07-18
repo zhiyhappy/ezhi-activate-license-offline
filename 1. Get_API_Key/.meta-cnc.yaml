@@ -50,5 +50,9 @@ snippets:
   - name: track
     path: https://{{ host_ip }}/api/?type=keygen&user={{ username }}&password={{ password }}
     operation: get
+    output_type: xml
+    outputs:
+      - name: api_key
+        capture_pattern: result/key
 # ---------------------------------------------------------------------
 # end of snippets section
